@@ -1,0 +1,40 @@
+{
+  "name": "@natemoore/pronouns",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Pronouns for GitHub profiles",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^3.9.6"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.22",
+    "@types/react": "^16.9.42",
+    "@types/react-dom": "^16.9.8",
+    "@vercel/node": "^1.7.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natemoo-re/pronouns.git"
+  },
+  "keywords": [],
+  "author": "Nate Moore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natemoo-re/pronouns/issues"
+  },
+  "homepage": "https://github.com/natemoo-re/pronouns#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,css,md}": "prettier --write"
+  }
+}

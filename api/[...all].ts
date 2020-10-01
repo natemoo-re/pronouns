@@ -1,15 +1,21 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 import { renderToString } from "react-dom/server";
+import flags from "../flags.json";
+import qs from "querystring";
 
-import { Player } from "../components/NowPlaying";
+import Pronouns from "../components/pronouns";
 
 export default async function (req: NowRequest, res: NowResponse) {
-  console.log(req.params);
+  const [base = "", query = ""] = req.url.slice(1).split("?");
+  const text = decodeURIComponent(base);
+  const q = qs.parse(query);
+  let flag = "";
+  if (typeof q.flag === "string") {
+    flag = flags[q.flag];
+  }
 
   res.setHeader("Content-Type", "image/svg+xml");
 
-  const text = renderToString(
-    Player({ cover: coverImg, artist, track, isPlaying, progress, duration })
-  );
-  return res.status(200).send(text);
+  const svg = renderToString(Pronouns({ children: text, flag }));
+  return res.status(200).send(svg);
 }

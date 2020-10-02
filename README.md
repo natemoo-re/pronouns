@@ -1,6 +1,8 @@
 # Pronouns
 
-A quick and easy way to add your pronouns to your GitHub profile.
+An easy way to add your pronouns to your GitHub profile!
+
+Generate your own at [pronouns.vercel.app](https://pronouns.vercel.app/)
 
 ```html
 <a href="https://pronouns.vercel.app" title="Add your own!">
@@ -26,5 +28,10 @@ A quick and easy way to add your pronouns to your GitHub profile.
 </a>
 
 <a href="https://pronouns.vercel.app" title="Add your own!">
-  <img src="https://pronouns.vercel.app/they/them?flag=trans" width="256" height="64" alt="My pronouns are they/them">
+  <img src="https://pronouns.vercel.app/they/them?gradient=moon%20purple" width="256" height="64" alt="My pronouns are they/them">
 </a>
+
+### Credits
+
+- [uiGradients](https://uigradients.com/) for the beautiful gradients.
+- [Charlie Peters](https://twitter.com/charlespeters) for the [pride flag CSS](https://lgbtq-css.vercel.app/).

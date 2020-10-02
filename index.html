@@ -7,7 +7,11 @@
     <style>
         * {
             margin: 0;
+            padding: 0;
             box-sizing: border-box;
+        }
+        :root {
+            --bg: linear-gradient(#24292e 0%, #24292e 100%);
         }
 
         html, body {
@@ -39,12 +43,126 @@
             font-size: clamp(1rem, calc(0.5rem + 3vw), 1.25rem);
         }
 
-        .mt-4 {
-            margin-top: 4rem;
-        }
 
         pre {
             text-align: left;
+        }
+
+        .stack {
+            display: flex;
+            flex-direction: column;
+            margin-top: 4rem;
+        }
+
+        form {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        fieldset {
+            border: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            display: flex;
+            flex: 1 0 auto;
+            align-items: center;
+        }
+
+        label a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        label a:hover,
+        label a:focus,
+        label a:active {
+            color: inherit;
+            opacity: 1;
+        }
+
+        select {
+            width: 256px;
+        }
+
+        label + label {
+            margin-top: 1rem;
+        }
+
+        label > span {
+            flex: 1 0 auto;
+            margin-right: 8px;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        #editor {
+            margin-top: 2rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+            color: #24292e;
+
+            height: auto;
+            min-width: 350px;
+            padding: 32px;
+            border: 1px solid #ddd;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        #editor > p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        h2 {
+            background-image: var(--bg);
+        }
+
+        #editor > h2 {
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            background-size: 200% auto;
+            background-color: inherit;
+            animation: wipe 5s linear infinite;
+
+            font-weight: 700;
+            letter-spacing: 0.2;
+            font-size: 26px;
+            line-height: 1.25;
+        }
+
+        button {
+            border: 0;
+            height: 48px;
+            border-radius: 0;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            border: 1px solid #ddd;
+            background: #ccc;
+            color: #000;
+            font-weight: bold;
+            font-size: 1rem;
+            border-top: 0;
+        }
+
+
+        @keyframes wipe {
+            to {
+            background-position: 200% center;
+            }
         }
     </style>
 </head>
@@ -53,13 +171,95 @@
         <h1>Pronouns</h1>
         <p>Add your pronouns to your GitHub profile!</p>
 
-        <div class="mt-4">
-            <p>Simply copy the code below, add your pronouns and optionally a <code>?flag</code> parameter.</p>
-
-            <pre class="mt-4"><code>&lt;a href="https://pronouns.vercel.app" title="Add your own!"&gt;
-  &lt;img src="https://pronouns.vercel.app/they/them" width="256" height="64" alt="My pronouns are they/them"&gt;
-&lt;/a&gt;</code></pre>
+        <div class="stack">
+            <form action="#">
+                <label>
+                    <span><a href="https://uigradients.com/">Gradient</a></span>
+                    <select name="gradient" id="gradient">
+                        <option value="none">Select a gradient</option>
+                    </select>
+                </label>
+                <label>
+                    <span><a href="https://lgbtq-css.vercel.app/">Pride Flag</a></span>
+                    <select name="flag" id="flag">
+                        <option value="none">Select a pride flag</option>
+                    </select>
+                </label>
+            </form>
+            <div id="editor">
+                <p>My pronouns are</p>
+                <h2 contenteditable="">they/them</h2>
+            </div>
+            <button id="copy">Copy!</button>
         </div>
-    </main>
+
+    <script type="module">
+        const pronouns = editor.querySelector('h2');
+        let gradients = [];
+        let flags = [];
+        let gradientValue = 'none';
+        let flagValue = 'none';
+        async function fetchSources() {
+            let [_gradients, _flags] = await Promise.all([
+                fetch("https://uigradients.com/gradients.json").then(res => res.json()),
+                fetch("/flags.json").then(res => res.json())
+            ]);
+            gradients = _gradients;
+            flags = _flags;
+            for (const f of Object.keys(flags)) {
+                const el = document.createElement('option')
+                el.value = f;
+                el.textContent = flags[f].label;
+                flag.appendChild(el);
+            }
+
+            for (const g of gradients) {
+                const el = document.createElement('option')
+                el.value = g.name;
+                el.textContent = g.name;
+                gradient.appendChild(el);
+            }
+
+        }
+
+        async function run() {
+            await fetchSources();
+            console.log(gradients, flags);
+            gradient.addEventListener('change', () => {
+                gradientValue = gradient.value;
+                if (gradientValue === 'none') {
+                    document.documentElement.style.removeProperty('--bg');
+                } else {
+                    flag.value = 'none';
+                    let def = gradients.find(gradient => gradient.name.toLowerCase() === decodeURI(gradientValue).toLowerCase());
+                    if (def) {
+                        document.documentElement.style.setProperty('--bg', `linear-gradient(to right, ${def.colors.map(v => v.toLowerCase()).join(', ')})`);
+                    }
+                }
+            });
+            flag.addEventListener('change', () => {
+                flagValue = flag.value;
+                if (flagValue === 'none') {
+                    document.documentElement.style.removeProperty('--bg');
+                } else {
+                    gradient.value = 'none';
+                    document.documentElement.style.setProperty('--bg', flags[flagValue].value);
+                }
+            });
+        }
+
+        run();
+
+        let value = 'they/them';
+        
+        editor.addEventListener('input', () => {
+            value = pronouns.textContent;
+        });
+        copy.addEventListener('click', () => {
+            const template = `<a href="https://pronouns.vercel.app" title="Add pronouns to your own profile">\n  <img src="https://pronouns.vercel.app/${encodeURI(value)}${flagValue !== 'none' ? `?flag=${flagValue}` : ''}${gradientValue !== 'none' ? `?gradient=${encodeURI(gradientValue.toLowerCase())}` : ''}" width="256" height="64" alt="My pronouns are ${value}">\n</a>`
+            if (!navigator.clipboard) return;
+            navigator.clipboard.writeText(template);
+        });
+    </script>
 </body>
 </html>

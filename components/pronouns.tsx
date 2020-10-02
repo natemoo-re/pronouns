@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "./image";
 
-const Pronouns = ({ children, flag }: { children: any; flag?: string }) => (
+const Pronouns = ({ children, image }: { children: any; image?: string }) => (
   <Image width="256" height="64">
     <style>{`
       h2 {
@@ -13,7 +13,7 @@ const Pronouns = ({ children, flag }: { children: any; flag?: string }) => (
         background-size: 200% auto;
         background-color: inherit;
         background-image: ${
-          flag ? flag : "linear-gradient(#24292e 0%, #24292e 100%)"
+          image ? image : "linear-gradient(#24292e 0%, #24292e 100%)"
         };
         animation: wipe 5s linear infinite;
       }
@@ -35,7 +35,7 @@ const Pronouns = ({ children, flag }: { children: any; flag?: string }) => (
     >
       <p
         style={{
-          fontSize: "14px",
+          fontSize: "16px",
           lineHeight: 1.5,
         }}
       >
@@ -44,7 +44,7 @@ const Pronouns = ({ children, flag }: { children: any; flag?: string }) => (
 
       <h2
         style={{
-          fontWeight: flag ? 800 : 700,
+          fontWeight: image ? 800 : 700,
           letterSpacing: 0.2,
           fontSize: "26px",
           lineHeight: 1.25,

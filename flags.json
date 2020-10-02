@@ -1,33 +1,70 @@
 {
-  "gay":
-    "linear-gradient(to right, #d04b36,#d04b36 16.6666%,#e36511 0,#e36511 33.333%,#ffba00 0,#ffba00 50%,#00b180 0,#00b180 66.6666%,#147aab 0,#147aab 83.3333%,#675997 0,#675997)",
-  "bi":
-    "linear-gradient(to right, #c1357e,#c1357e 40%,#675997 0,#675997 60%,#0655a9 0,#0655a9)",
-  "trans":
-    "linear-gradient(to right, #4fa5c2,#4fa5c2 20%,#f587ac 0,#f587ac 40%,#f9fbfc 0,#f9fbfc 60%,#f587ac 0,#f587ac 80%,#4fa5c2 0,#4fa5c2)",
-  "nb":
-    "linear-gradient(to right, #f7e45a,#f7e45a 25%,#f9fbfc 0,#f9fbfc 50%,#675997 0,#675997 75%,#222 0,#222)",
-  "asex":
-    "linear-gradient(to right, #222,#222 20%,#a2a2a2 0,#a2a2a2 40%,#f9fbfc 0,#f9fbfc 60%,#a148a2 0,#a148a2 80%,#222 0,#222)",
-  "pan":
-    "linear-gradient(to right, #ea38aa,#ea38aa 33.332%,#ffba00 0,#ffba00 66.667%,#2188e8 0,#2188e8)",
-  "queer":
-    "linear-gradient(to right, #000,#000 8%,#99d9eb 0,#99d9eb 20%,#00a2e6 0,#00a2e6 32%,#b4e637 0,#b4e637 44%,#fff 0,#fff 56%,#ffba00 0,#ffba00 68%,#fd6666 0,#fd6666 80%,#ffafc8 0,#ffafc8 92%,#000 0,#000)",
-  "gaymen":
-    "linear-gradient(to right, #007c6b,#007c6b 14.28%,#40a4a5 0,#40a4a5 28.58%,#59c8d2 0,#59c8d2 42.87%,#f0efff 0,#f0efff 57.16%,#7aade0 0,#7aade0 71.45%,#0b83c9 0,#0b83c9 85.74%,#04336f 0,#04336f)",
-  "lesbian":
-    "linear-gradient(to right, #d82c01,#d82c01 14.28%,#f1752c 0,#f1752c 28.58%,#ff985b 0,#ff985b 42.87%,#fff 0,#fff 57.16%,#d162a3 0,#d162a3 71.45%,#b75591 0,#b75591 85.74%,#a60260 0,#a60260)",
-  "intersex":
-    "repeating-radial-gradient(circle at center,#ffba00,#ffba00 10%,#675997 0,#675997 15%,#ffba00 0,#ffba00 100%)",
-  "genderfluid":
-    "linear-gradient(to right, #f39ec1,#f39ec1 20%,#fff 0,#fff 40%,#a74a95 0,#a74a95 60%,#000 0,#000 80%,#0068b5 0,#0068b5)",
-  "agender":
-    "linear-gradient(to right, #000,#000 14.28%,#b9b9b9 0,#b9b9b9 28.58%,#fff 0,#fff 42.87%,#b8f58a 0,#b8f58a 57.16%,#fff 0,#fff 71.45%,#b9b9b9 0,#b9b9b9 85.74%,#000 0,#000)",
-  "polyamorous": "linear-gradient(to right, #14abea,#14abea 40%,#fd2142 0,#fd2142 60%,#181919 0,#181919)",
-  "omni":
-    "linear-gradient(to right, #ff92c5,#ff92c5 20%,#ff4ab3 0,#ff4ab3 40%,#24033c 0,#24033c 60%,#5855f8 0,#5855f8 80%,#7b9dfb 0,#7b9dfb)",
-  "polysexual":
-    "linear-gradient(to right, #ea38aa,#ea38aa 33.332%,#44cc70 0,#44cc70 66.667%,#2188e8 0,#2188e8)",
-  "aroace":
-    "linear-gradient(to right, #e68222,#e68222 20%,#eec62d 0,#eec62d 40%,#fff 0,#fff 60%,#49a6d5 0,#49a6d5 80%,#1c304b 0,#1c304b)"
+  "gay": {
+    "label": "Gay",
+    "value": "linear-gradient(to right, #d04b36,#d04b36 16.6666%,#e36511 0,#e36511 33.333%,#ffba00 0,#ffba00 50%,#00b180 0,#00b180 66.6666%,#147aab 0,#147aab 83.3333%,#675997 0,#675997)"
+  },
+  "bi": {
+    "label": "Bisexual",
+    "value": "linear-gradient(to right, #c1357e,#c1357e 40%,#675997 0,#675997 60%,#0655a9 0,#0655a9)"
+  },
+  "trans": {
+    "label": "Transgender",
+    "value": "linear-gradient(to right, #4fa5c2,#4fa5c2 20%,#f587ac 0,#f587ac 40%,#f9fbfc 0,#f9fbfc 60%,#f587ac 0,#f587ac 80%,#4fa5c2 0,#4fa5c2)"
+  },
+  "nb": {
+    "label": "Non-binary",
+    "value": "linear-gradient(to right, #f7e45a,#f7e45a 25%,#f9fbfc 0,#f9fbfc 50%,#675997 0,#675997 75%,#222 0,#222)"
+  },
+  "asex": {
+    "label": "Asexual",
+    "value": "linear-gradient(to right, #222,#222 20%,#a2a2a2 0,#a2a2a2 40%,#f9fbfc 0,#f9fbfc 60%,#a148a2 0,#a148a2 80%,#222 0,#222)"
+  },
+  "pan": {
+    "label": "Pansexual",
+    "value": "linear-gradient(to right, #ea38aa,#ea38aa 33.332%,#ffba00 0,#ffba00 66.667%,#2188e8 0,#2188e8)"
+  },
+  "queer": {
+    "label": "Queer",
+    "value": "linear-gradient(to right, #000,#000 8%,#99d9eb 0,#99d9eb 20%,#00a2e6 0,#00a2e6 32%,#b4e637 0,#b4e637 44%,#fff 0,#fff 56%,#ffba00 0,#ffba00 68%,#fd6666 0,#fd6666 80%,#ffafc8 0,#ffafc8 92%,#000 0,#000)"
+  },
+  "gaymen": {
+    "label": "Gay Male",
+    "value": "linear-gradient(to right, #007c6b,#007c6b 14.28%,#40a4a5 0,#40a4a5 28.58%,#59c8d2 0,#59c8d2 42.87%,#f0efff 0,#f0efff 57.16%,#7aade0 0,#7aade0 71.45%,#0b83c9 0,#0b83c9 85.74%,#04336f 0,#04336f)"
+  },
+  "lesbian": {
+    "label": "Lesbian",
+    "value": "linear-gradient(to right, #d82c01,#d82c01 14.28%,#f1752c 0,#f1752c 28.58%,#ff985b 0,#ff985b 42.87%,#fff 0,#fff 57.16%,#d162a3 0,#d162a3 71.45%,#b75591 0,#b75591 85.74%,#a60260 0,#a60260)"
+  },
+  "intersex": {
+    "label": "Intersex",
+    "value": "repeating-radial-gradient(circle at center,#ffba00,#ffba00 10%,#675997 0,#675997 15%,#ffba00 0,#ffba00 100%)"
+  },
+  "genderfluid": {
+    "label": "Genderfluid",
+    "value": "linear-gradient(to right, #f39ec1,#f39ec1 20%,#fff 0,#fff 40%,#a74a95 0,#a74a95 60%,#000 0,#000 80%,#0068b5 0,#0068b5)"
+  },
+  "agender": {
+    "label": "Agender",
+    "value": "linear-gradient(to right, #000,#000 14.28%,#b9b9b9 0,#b9b9b9 28.58%,#fff 0,#fff 42.87%,#b8f58a 0,#b8f58a 57.16%,#fff 0,#fff 71.45%,#b9b9b9 0,#b9b9b9 85.74%,#000 0,#000)"
+  },
+  "polyamorous": {
+    "label": "Polyamorous",
+    "value": "linear-gradient(to right, #14abea,#14abea 40%,#fd2142 0,#fd2142 60%,#181919 0,#181919)"
+  },
+  "omni": {
+    "label": "Polyamorous",
+    "value": "linear-gradient(to right, #ff92c5,#ff92c5 20%,#ff4ab3 0,#ff4ab3 40%,#24033c 0,#24033c 60%,#5855f8 0,#5855f8 80%,#7b9dfb 0,#7b9dfb)"
+  },
+  "polysexual": {
+    "label": "Polysexual",
+    "value": "linear-gradient(to right, #ea38aa,#ea38aa 33.332%,#44cc70 0,#44cc70 66.667%,#2188e8 0,#2188e8)"
+  },
+  "aroace": {
+    "label": "Aromantic Asexual",
+    "value": "linear-gradient(to right, #e68222,#e68222 20%,#eec62d 0,#eec62d 40%,#fff 0,#fff 60%,#49a6d5 0,#49a6d5 80%,#1c304b 0,#1c304b)"
+  },
+  "genderqueer": {
+    "label": "Genderqueer",
+    "value": "linear-gradient(to right, #b390d6,#b390d6 33.332%,#fff 0,#fff 66.667%,#5d8437 0,#5d8437)"
+  }
 }
